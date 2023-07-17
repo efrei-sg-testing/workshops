@@ -22,5 +22,10 @@ export function hangmanState(wordToGuess, guessedLetters) {
 }
 
 export function hangmanWord(wordToGuess, guessedLetters) {
-  return "";
+  const uppercaseGuessedLetters = guessedLetters.toUpperCase();
+  return wordToGuess
+    .toUpperCase()
+    .split("")
+    .map((letter) => (uppercaseGuessedLetters.includes(letter) ? letter : "_"))
+    .join("");
 }
