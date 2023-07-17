@@ -22,6 +22,19 @@ export function hangmanState(wordToGuess, guessedLetters) {
 }
 
 export function hangmanWord(wordToGuess, guessedLetters) {
-  return "";
+  let result = wordToGuess.toLowerCase()
+  var pattern = /[0-9a-z]/g;
+  for (const letter of guessedLetters.toLowerCase()) {
+    result = result.replaceAll(letter,letter.toUpperCase())
+  }
+  result = result.replaceAll(pattern, "_");
+  return result;
+}
 
+export function hangmanWord2(wordToGuess, guessedLetters) {
+  return wordToGuess
+  .toUpperCase()
+  .split("")
+  .map(letter => (guessedLetters.toUpperCase.includes(letter) ? letter : "_"))
+  .join("");
 }
