@@ -1,3 +1,5 @@
 export function niOuiNiNon(sentence) {
-  return false;
+  const sentenceoui = sentence.toLowerCase().includes("oui");
+  const sentencenon = sentence.toLowerCase().includes("non");
+  return !(sentenceoui || sentencenon);
 }
