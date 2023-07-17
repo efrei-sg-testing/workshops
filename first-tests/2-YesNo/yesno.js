@@ -1,3 +1,7 @@
 export function niOuiNiNon(sentence) {
-  return false;
+  const lowercaseSentence = sentence.toLowerCase();
+
+  return !(
+    lowercaseSentence.includes("oui") || lowercaseSentence.includes("non")
+  );
 }
